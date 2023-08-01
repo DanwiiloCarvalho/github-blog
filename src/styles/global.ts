@@ -17,4 +17,8 @@ export const GlobalStyle = createGlobalStyle`
     body, textarea, input, button {
         font: 400 1rem Nunito, sans-serif;
     }
+
+    a {
+        text-decoration: none;
+    }
 `

@@ -1,3 +1,10 @@
+import { Profile } from './components/Profile'
+import { MainContainer } from './styles'
+
 export function Blog() {
-  return <h1>Blog</h1>
+  return (
+    <MainContainer>
+      <Profile />
+    </MainContainer>
+  )
 }
