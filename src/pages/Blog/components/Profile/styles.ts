@@ -2,7 +2,6 @@ import { styled } from 'styled-components'
 
 export const StyledProfile = styled.section`
   width: 54rem;
-  /* height: 13.25rem; */
   flex-shrink: 0;
   background-color: ${(props) => props.theme['base-profile']};
   margin: auto;
@@ -42,11 +41,16 @@ export const Bio = styled.div`
 
     font-weight: 700;
     text-transform: uppercase;
+    line-height: 1.2rem;
     color: ${(props) => props.theme.blue};
 
     display: inline-flex;
     gap: 0.5rem;
     align-items: center;
+
+    &:hover {
+      border-bottom: 1px solid ${(props) => props.theme.blue};
+    }
 
     img {
       width: 0.75rem;
