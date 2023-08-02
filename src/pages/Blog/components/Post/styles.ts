@@ -8,27 +8,31 @@ export const StyledPost = styled.article`
   border: 2px solid transparent;
   border-radius: 10px;
   background-color: ${(props) => props.theme['base-post']};
-  padding: 2rem;
+  padding: 2rem 0; //zerando o padding lateral
 
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 1.25rem;
 
   p {
     line-height: 1.6rem;
     color: ${(props) => props.theme['base-text']};
+
+    //Adição de largura e altura ao parágrafo
+    width: 22rem;
+    height: 7rem;
+    flex-shrink: 0;
   }
 
   &:hover {
     border: 2px solid ${(props) => props.theme['base-label']};
-    padding: 2rem;
-    /* background-color: ${(props) => props.theme['base-post']}; */
   }
 `
 
 export const PostHeader = styled.header`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   gap: 1rem;
 
   h1 {
@@ -42,6 +46,7 @@ export const PostHeader = styled.header`
   time {
     font-size: 0.875rem;
     line-height: 1.4rem;
+    font-weight: 400;
     color: ${(props) => props.theme['base-span']};
   }
 `
