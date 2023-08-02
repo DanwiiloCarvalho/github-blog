@@ -5,6 +5,7 @@ export const StyledPost = styled.article`
   height: 16.25rem;
   flex-shrink: 0;
 
+  border: 2px solid transparent;
   border-radius: 10px;
   background-color: ${(props) => props.theme['base-post']};
   padding: 2rem;
@@ -13,7 +14,15 @@ export const StyledPost = styled.article`
   flex-direction: column;
   gap: 1.25rem;
 
+  p {
+    line-height: 1.6rem;
+    color: ${(props) => props.theme['base-text']};
+  }
+
   &:hover {
+    border: 2px solid ${(props) => props.theme['base-label']};
+    padding: 2rem;
+    /* background-color: ${(props) => props.theme['base-post']}; */
   }
 `
 
