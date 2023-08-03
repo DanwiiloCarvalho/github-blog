@@ -3,35 +3,70 @@ import githubIcon from '../../../../assets/githubIcon.svg'
 import githubInfo from '../../../../assets/githubInfo.svg'
 import companyInfo from '../../../../assets/companyInfo.svg'
 import followersInfo from '../../../../assets/followersInfo.svg'
+import { useEffect, useState } from 'react'
+import { api } from '../../../../lib/axios'
+
+interface UserBio {
+  avatarUrl: string
+  name: string
+  login: string
+  htmlUrl: string
+  bio: string
+  company: string
+  followers: number
+}
 
 export function Profile() {
+  const [userBio, setUserBio] = useState<UserBio>({} as UserBio)
+
+  async function fetchUserData() {
+    try {
+      const response = await api.get('/users/gustavoguanabara')
+      const { avatar_url, name, login, html_url, bio, company, followers } =
+        response.data
+
+      const userData = {
+        avatarUrl: avatar_url,
+        name,
+        login,
+        htmlUrl: html_url,
+        bio,
+        company,
+        followers,
+      }
+
+      setUserBio(userData)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  useEffect(() => {
+    fetchUserData()
+  }, [])
+
   return (
     <StyledProfile>
-      <img src="https://avatars.githubusercontent.com/u/8683378?v=4" alt="" />
+      <img src={userBio.avatarUrl} alt="" />
       <Bio>
-        <strong>Cameron Williamson</strong>
-        <a href="">
+        <strong>{userBio.name}</strong>
+        <a href={userBio.htmlUrl} target="_blank" rel="noreferrer">
           Github
           <img src={githubIcon} alt="" />
         </a>
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum
-          repudiandae nesciunt nemo expedita perspiciatis corporis asperiores,
-          placeat incidunt! Et debitis atque consequuntur exercitationem
-          suscipit ex quos ut culpa facilis perferendis.
-        </p>
+        <p>{userBio.bio}</p>
         <Info>
           <div className="info">
             <img src={githubInfo} alt="" />
-            <span>cameronwll</span>
+            <span>{userBio.login}</span>
           </div>
           <div className="info">
             <img src={companyInfo} alt="" />
-            <span>Rocketseat</span>
+            <span>{userBio.company}</span>
           </div>
           <div className="info">
             <img src={followersInfo} alt="" />
-            <span>32 seguidores</span>
+            <span>{userBio.followers} seguidores</span>
           </div>
         </Info>
       </Bio>

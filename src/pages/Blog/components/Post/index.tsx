@@ -2,6 +2,7 @@ import { PostHeader, StyledPost } from './styles'
 
 interface PostProps {
   title?: string
+  
   description?: string
 }
 export function Post(props: PostProps) {
