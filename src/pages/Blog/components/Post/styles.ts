@@ -8,12 +8,14 @@ export const StyledPost = styled.article`
   border: 2px solid transparent;
   border-radius: 10px;
   background-color: ${(props) => props.theme['base-post']};
-  padding: 2rem 0; //zerando o padding lateral
+  padding: 2rem 2rem; //zerando o padding lateral
 
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1.25rem;
+
+  overflow: hidden;
 
   p {
     line-height: 1.6rem;
@@ -23,6 +25,8 @@ export const StyledPost = styled.article`
     width: 22rem;
     height: 7rem;
     flex-shrink: 0;
+
+    //overflow: hidden;
   }
 
   &:hover {
@@ -32,11 +36,11 @@ export const StyledPost = styled.article`
 
 export const PostHeader = styled.header`
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  width: 100%;
   gap: 1rem;
 
   h1 {
-    width: 17.6875rem;
     font-size: 1.25rem;
     font-weight: 700;
     line-height: 2rem;
@@ -48,5 +52,6 @@ export const PostHeader = styled.header`
     line-height: 1.4rem;
     font-weight: 400;
     color: ${(props) => props.theme['base-span']};
+    text-align: right;
   }
 `
