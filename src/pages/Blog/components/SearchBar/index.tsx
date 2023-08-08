@@ -58,7 +58,7 @@ export function SearchBar({ label, placeholder }: SearchBarProps) {
     setIssues(issuesList)
   }
 
-  //issues.length > 0 && console.log(issues)
+  // issues.length > 0 && console.log(issues)
 
   return (
     <StyledSearchBar onSubmit={handleSubmit(searchIssues)}>

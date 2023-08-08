@@ -17,16 +17,48 @@ export const StyledPost = styled.article`
 
   overflow: hidden;
 
-  p {
+  /* p {
     line-height: 1.6rem;
     color: ${(props) => props.theme['base-text']};
 
-    //Adição de largura e altura ao parágrafo
     width: 22rem;
-    height: 7rem;
     flex-shrink: 0;
 
-    //overflow: hidden;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+  } */
+
+  div {
+    /* width: 22rem; */
+    width: 100%;
+    height: 16.25rem;
+    overflow: hidden;
+    line-height: 1.6rem;
+    color: ${(props) => props.theme['base-text']};
+
+    /* p {
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+    } */
+
+    a {
+      pointer-events: none;
+      color: inherit;
+    }
+
+    p {
+      overflow: hidden;
+
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+    }
   }
 
   &:hover {
@@ -40,11 +72,19 @@ export const PostHeader = styled.header`
   width: 100%;
   gap: 1rem;
 
+  height: 4rem;
+
   h1 {
     font-size: 1.25rem;
     font-weight: 700;
     line-height: 2rem;
     color: ${(props) => props.theme['base-title']};
+
+    overflow: hidden; // Removendo barra de rolagem
+    text-overflow: ellipsis; // Adicionando "..." ao final
+    display: -webkit-box;
+    -webkit-line-clamp: 2; // Quantidade de linhas
+    -webkit-box-orient: vertical;
   }
 
   time {
@@ -53,5 +93,8 @@ export const PostHeader = styled.header`
     font-weight: 400;
     color: ${(props) => props.theme['base-span']};
     text-align: right;
+
+    width: 10rem;
+    padding-top: 0.31rem;
   }
 `
