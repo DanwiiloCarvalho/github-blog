@@ -5,6 +5,7 @@ import companyInfo from '../../../../assets/companyInfo.svg'
 import followersInfo from '../../../../assets/followersInfo.svg'
 import { useEffect, useState } from 'react'
 import { api } from '../../../../lib/axios'
+import { GoTo } from '../../../../components/GoTo'
 
 interface UserBio {
   avatarUrl: string
@@ -50,10 +51,11 @@ export function Profile() {
       <img src={userBio.avatarUrl} alt="" />
       <Bio>
         <strong>{userBio.name}</strong>
-        <a href={userBio.htmlUrl} target="_blank" rel="noreferrer">
+        {/* <a href={userBio.htmlUrl} target="_blank" rel="noreferrer">
           Github
           <img src={githubIcon} alt="" />
-        </a>
+        </a> */}
+        <GoTo label="Github" link={userBio.htmlUrl} />
         <p>{userBio.bio}</p>
         <Info>
           <div className="info">

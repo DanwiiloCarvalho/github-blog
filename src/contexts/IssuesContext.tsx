@@ -3,6 +3,7 @@ import { createContext, useState } from 'react'
 // interface IssuesContextProps {}
 export interface Issue {
   id: number
+  number: number
   title: string
   created_at: string
   body: string

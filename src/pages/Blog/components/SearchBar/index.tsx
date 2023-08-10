@@ -50,6 +50,7 @@ export function SearchBar({ label, placeholder }: SearchBarProps) {
     const issuesList = responseData.items.map((issue) => {
       return {
         id: issue.id,
+        number: issue.number,
         title: issue.title,
         body: issue.body,
         created_at: issue.created_at,

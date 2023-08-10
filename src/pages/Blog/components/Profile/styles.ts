@@ -33,7 +33,7 @@ export const Bio = styled.div`
     color: ${(props) => props.theme['base-title']};
   }
 
-  a {
+  /* a {
     position: absolute;
     top: 2.5rem;
     right: 2rem;
@@ -56,7 +56,7 @@ export const Bio = styled.div`
       width: 0.75rem;
       height: 0.75rem;
     }
-  }
+  } */
 
   p {
     margin-top: 0.5rem;
@@ -76,7 +76,8 @@ export const Info = styled.div`
     gap: 0.5rem;
     align-items: center;
 
-    span {
+    span,
+    time {
       line-height: 1.6rem;
     }
   }

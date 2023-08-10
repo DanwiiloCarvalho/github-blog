@@ -12,6 +12,7 @@ export function Posts() {
           issues.map((issue) => (
             <li key={issue.id}>
               <Post
+                number={issue.number}
                 title={issue.title}
                 description={issue.body}
                 createdAt={issue.created_at}
