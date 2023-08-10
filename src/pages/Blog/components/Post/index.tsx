@@ -34,7 +34,7 @@ export function Post({ number, title, description, createdAt }: PostProps) {
   }
 
   return (
-    <Link to={'/post/' + number}>
+    <Link to={'/github-blog/post/' + number}>
       <StyledPost>
         <PostHeader>
           <h1>{title}</h1>
