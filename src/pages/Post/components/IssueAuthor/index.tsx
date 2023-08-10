@@ -26,7 +26,7 @@ export function IssueAuthor({
   return (
     <StyledIssueAuthor>
       <div>
-        <Link to={'/'}>
+        <Link to={'/github-blog'}>
           <img src={goBack} alt="" /> voltar
         </Link>
         <GoTo label="ver no github" link={html_url} />

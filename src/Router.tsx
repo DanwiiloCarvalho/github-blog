@@ -5,8 +5,8 @@ import { Post } from './pages/Post'
 export function Router() {
   return (
     <Routes>
-      <Route path="/" element={<Blog />} />
-      <Route path="/post/:issueId" element={<Post />} />
+      <Route path="/github-blog" element={<Blog />} />
+      <Route path="/github-blog/post/:issueId" element={<Post />} />
     </Routes>
   )
 }
